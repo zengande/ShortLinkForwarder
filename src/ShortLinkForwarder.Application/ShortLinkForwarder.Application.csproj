@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ShortLinkForwarder.Domain\ShortLinkForwarder.Domain.csproj" />
     <ProjectReference Include="..\ShortLinkForwarder.Application.Contracts\ShortLinkForwarder.Application.Contracts.csproj" />
+    <ProjectReference Include="..\ShortLinkForwarder.EntityFrameworkCore\ShortLinkForwarder.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -23,4 +23,8 @@
     <Content Remove="Localization\ShortLinkForwarder\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="新文件夹\" />
+  </ItemGroup>
+
 </Project>

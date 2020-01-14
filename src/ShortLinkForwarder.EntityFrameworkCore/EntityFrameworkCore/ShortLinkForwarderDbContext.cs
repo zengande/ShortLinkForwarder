@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShortLinkForwarder.Links;
 using ShortLinkForwarder.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -20,6 +21,7 @@ namespace ShortLinkForwarder.EntityFrameworkCore
     public class ShortLinkForwarderDbContext : AbpDbContext<ShortLinkForwarderDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Link> Links { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside ShortLinkForwarderDbContextModelCreatingExtensions.ConfigureShortLinkForwarder

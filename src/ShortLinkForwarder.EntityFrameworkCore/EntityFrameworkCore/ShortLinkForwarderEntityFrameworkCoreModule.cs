@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ShortLinkForwarder.EntityFrameworkCore.Repositories;
+using ShortLinkForwarder.Links;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -34,6 +36,8 @@ namespace ShortLinkForwarder.EntityFrameworkCore
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
                 options.AddDefaultRepositories(includeAllEntities: true);
+
+                options.AddRepository<Link, LinkRepository>();
             });
 
             Configure<AbpDbContextOptions>(options =>

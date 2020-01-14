@@ -40,7 +40,6 @@ using Volo.Abp.VirtualFileSystem;
 namespace ShortLinkForwarder.Web
 {
     [DependsOn(
-        typeof(ShortLinkForwarderHttpApiModule),
         typeof(ShortLinkForwarderApplicationModule),
         typeof(ShortLinkForwarderEntityFrameworkCoreDbMigrationsModule),
         typeof(AbpAutofacModule),
@@ -206,7 +205,11 @@ namespace ShortLinkForwarder.Web
             });
             app.UseAuditing();
             app.UseAbpSerilogEnrichers();
-            app.UseMvcWithDefaultRouteAndArea();
+            app.UseEndpoints(routes =>
+            {
+                routes.MapRazorPages();
+                routes.MapDefaultControllerRoute();
+            });
         }
     }
 }
